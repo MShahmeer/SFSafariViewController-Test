@@ -11,16 +11,16 @@ import SafariServices
 
 class ViewController: UIViewController, SFSafariViewControllerDelegate {
 
-    @IBAction func launchSFSafariViewController(sender: AnyObject) {
-        let svc = SFSafariViewController(URL: NSURL(string: "http://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html")!, entersReaderIfAvailable: true)
+    @IBAction func launchSFSafariViewController(_ sender: AnyObject) {
+        let svc = SFSafariViewController(url: URL(string: "http://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html")!, entersReaderIfAvailable: true)
         svc.delegate = self
-        self.presentViewController(svc, animated: true, completion: nil)
+        self.present(svc, animated: true, completion: nil)
     }
     
-    @IBAction func launchSFSafariVCReaderDisabled(sender: AnyObject) {
-        let svc = SFSafariViewController(URL: NSURL(string: "http://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html")!, entersReaderIfAvailable: false)
+    @IBAction func launchSFSafariVCReaderDisabled(_ sender: AnyObject) {
+        let svc = SFSafariViewController(url: URL(string: "http://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html")!, entersReaderIfAvailable: false)
         svc.delegate = self
-        self.presentViewController(svc, animated: true, completion: nil)
+        self.present(svc, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -28,8 +28,8 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func safariViewControllerDidFinish(controller: SFSafariViewController) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
